@@ -1,13 +1,17 @@
 from bs4 import BeautifulSoup
-import helper as helper
+import os
+import helper
 import requests
 
 session = requests.Session()
 
+username = os.environ.get('SYNE_USER')
+password = os.environ.get('SYNE_PASS')
+
 payload = {
     'AY_ID': 21,
-    'UserName': '2020012004',
-    'Password': 'testtesttest'
+    'UserName': username,
+    'Password': password
 }
 
 s = session.post("https://xavier.qualcampus.com/Account/LogOn", data=payload)
