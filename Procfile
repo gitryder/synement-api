@@ -1,1 +1,1 @@
-web: hypercorn main:app --reload -b localhost:80
+web: hypercorn main:app --reload -b localhost:$PORT
