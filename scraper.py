@@ -8,19 +8,13 @@ session = requests.Session()
 username = os.environ.get('SYNE_USER')
 password = os.environ.get('SYNE_PASS')
 
-payload = {
-    'AY_ID': 21,
-    'UserName': username,
-    'Password': password
-}
+payload = {'AY_ID': 21, 'UserName': username, 'Password': password}
 
 s = session.post("https://xavier.qualcampus.com/Account/LogOn", data=payload)
 s = session.get('https://xavier.qualcampus.com/Dashboard_Assignment_Student')
 
 soup = BeautifulSoup(s.text, 'html.parser')
-table = soup.find('table', attrs={
-    'id': 'AssignmentListTable'
-})
+table = soup.find('table', attrs={'id': 'AssignmentListTable'})
 
 
 def get_all_data():
