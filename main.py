@@ -17,14 +17,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def index():
     return {'info': 'synement v0.1'}
 
 
-@app.get('/all')
-def get_all_course_work():
-    return data.all_course_work()
+@app.get('/all/today')
+def get_all_due_today():
+    return data.all_due_today()
+
+
+@app.get('/all/tommorrow')
+def get_all_due_tommorrow():
+    return data.all_due_tommorrow()
+
+
+@app.get('/all/after')
+def get_all_due_after_tommorow():
+    return data.all_due_after_tommorow()
 
 
 @app.get('/assignments')
