@@ -1,9 +1,12 @@
+import datetime
+import pytz
+
 data_keys = [
-    'id',
-    'subject',
-    'type',
-    'title',
-    'description',
+    'id', 
+    'subject', 
+    'type', 
+    'title', 
+    'description', 
     'date_assigned',
     'date_due'
 ]
@@ -15,6 +18,17 @@ def clean_data(table_data):
         row[4] = row[4].replace('Pending', '').replace('Submitted', '')
         data.append(row[:7])
     return data
+
+
+def get_date_today():
+    return datetime.datetime.now(
+        pytz.timezone('Asia/Kolkata')).strftime('%d-%b-%G')
+
+
+def get_date_tommorrow():
+    tommorow = datetime.datetime.now(
+        pytz.timezone('Asia/Kolkata')) + datetime.timedelta(days=1)
+    return tommorow.strftime('%d-%b-%G')
 
 
 def get_row_with_keys(row):
