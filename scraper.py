@@ -7,14 +7,14 @@ session = requests.Session()
 
 def get_table_for(year=""):
     if (year == "se"):
-        username = "2020012004"
-        password = "testtesttest"
+        username =  os.environ.get('SYNE_SE_USER')
+        password =  os.environ.get('SYNE_SE_PASS')
     elif (year == "be"):
-        username = "2020012004"
-        password = "testtesttest"
+        username =  os.environ.get('SYNE_BE_USER')
+        password =  os.environ.get('SYNE_BE_PASS')
     else:
-        username = "2020012004"
-        password = "testtesttest"
+        username =  os.environ.get('SYNE_USER')
+        password =  os.environ.get('SYNE_PASS')
 
     payload = {'AY_ID': 21, 'UserName': username, 'Password': password}
 
