@@ -25,10 +25,10 @@ def get_date_today():
         pytz.timezone('Asia/Kolkata')).strftime('%d-%b-%G')
 
 
-def get_date_tommorrow():
-    tommorow = datetime.datetime.now(
+def get_date_tomorrow():
+    tomorrow = datetime.datetime.now(
         pytz.timezone('Asia/Kolkata')) + datetime.timedelta(days=1)
-    return tommorow.strftime('%d-%b-%G')
+    return tomorrow.strftime('%d-%b-%G')
 
 
 def get_row_with_keys(row):

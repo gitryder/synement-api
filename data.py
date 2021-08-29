@@ -42,28 +42,28 @@ def all_due_today():
     return all_work_due_today
 
 
-def all_due_tommorrow():
-    all_work_due_tommorrow = []
+def all_due_tomorrow():
+    all_work_due_tomorrow = []
     all_work = all_course_work()
-    tommorrow = helper.get_date_tommorrow()
+    tomorrow = helper.get_date_tomorrow()
 
     for row in all_work:
-        if row['date_due'] == tommorrow:
-            all_work_due_tommorrow.append(row)
-    return all_work_due_tommorrow
+        if row['date_due'] == tomorrow:
+            all_work_due_tomorrow.append(row)
+    return all_work_due_tomorrow
 
 
-def all_due_after_tommorow():
-    all_work_due_after_tommorow = []
+def all_due_after_tomorrow():
+    all_work_due_after_tomorrow = []
     all_work = all_course_work()
 
     today = helper.get_date_today()
-    tommorrow = helper.get_date_tommorrow()
+    tomorrow = helper.get_date_tomorrow()
 
     for row in all_work:
-        if row['date_due'] != today and row['date_due'] != tommorrow:
-            all_work_due_after_tommorow.append(row)
-    return all_work_due_after_tommorow
+        if row['date_due'] != today and row['date_due'] != tomorrow:
+            all_work_due_after_tomorrow.append(row)
+    return all_work_due_after_tomorrow
 
 
 def all_experiments():

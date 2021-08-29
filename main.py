@@ -25,14 +25,14 @@ def get_all_due_today():
     return data.all_due_today()
 
 
-@app.get('/all/tommorrow')
-def get_all_due_tommorrow():
-    return data.all_due_tommorrow()
+@app.get('/all/tomorrow')
+def get_all_due_tomorrow():
+    return data.all_due_tomorrow()
 
 
 @app.get('/all/after')
-def get_all_due_after_tommorow():
-    return data.all_due_after_tommorow()
+def get_all_due_after_tomorrow():
+    return data.all_due_after_tomorrow()
 
 
 @app.get('/assignments')
