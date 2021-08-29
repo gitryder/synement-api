@@ -6,10 +6,10 @@ import requests
 session = requests.Session()
 
 def get_table_for(year=""):
-    if (year == "SE"):
+    if (year == "se"):
         username = "2020012004"
         password = "testtesttest"
-    elif (year == "BE"):
+    elif (year == "be"):
         username = "2020012004"
         password = "testtesttest"
     else:
