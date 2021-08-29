@@ -4,10 +4,7 @@ import data as data
 
 app = FastAPI()
 
-origins = [
-    "http://localhost",
-    "http://localhost:1234",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
