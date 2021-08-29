@@ -20,19 +20,19 @@ def index():
     return {'info': 'synement v0.1'}
 
 
-@app.get('/all/today')
-def get_all_due_today():
-    return data.all_due_today()
+@app.get('/{year}/today')
+def get_all_due_today(year):
+    return data.all_due_today(year)
 
 
-@app.get('/all/tomorrow')
-def get_all_due_tomorrow():
-    return data.all_due_tomorrow()
+@app.get('/{year}/tomorrow')
+def get_all_due_tomorrow(year):
+    return data.all_due_tomorrow(year)
 
 
-@app.get('/all/after')
-def get_all_due_after_tomorrow():
-    return data.all_due_after_tomorrow()
+@app.get('/{year}/after')
+def get_all_due_after_tomorrow(year):
+    return data.all_due_after_tomorrow(year)
 
 
 @app.get('/assignments')
