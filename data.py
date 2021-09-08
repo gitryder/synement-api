@@ -2,9 +2,9 @@ import scraper
 import helper
 import time
 
-se_data = scraper.get_all_data_for("se")
+#se_data = scraper.get_all_data_for("se")
 te_data = scraper.get_all_data_for("te")
-be_data = scraper.get_all_data_for("be")
+#be_data = scraper.get_all_data_for("be")
 
 
 def is_before_today(date_string):
