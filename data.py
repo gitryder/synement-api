@@ -2,9 +2,7 @@ import scraper
 import helper
 import time
 
-#se_data = scraper.get_all_data_for("se")
 te_data = scraper.get_all_data_for("te")
-#be_data = scraper.get_all_data_for("be")
 
 
 def is_before_today(date_string):
@@ -16,12 +14,8 @@ def is_before_today(date_string):
 
 
 def all_course_work(year):
-    if (year == "se"):
-        data = se_data
-    elif (year == "be"):
-        data = be_data
-    else:
-        data = te_data
+    # TODO: Set data according to the year
+    data = te_data
 
     all_course_work = []
 
