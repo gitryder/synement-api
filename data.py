@@ -58,22 +58,3 @@ def all_due_after_tomorrow(year):
         if row['date_due'] != today and row['date_due'] != tomorrow:
             all_work_due_after_tomorrow.append(row)
     return all_work_due_after_tomorrow
-
-
-# Unused methods
-
-def all_assignments():
-    all_assignments = []
-
-    for row in te_data[1:]:
-        if row[2] == 'Assignment':
-            all_assignments.append(helper.get_row_with_keys(row))
-    return all_assignments
-
-
-def all_experiments():
-    all_experiments = []
-    for row in te_data[1:]:
-        if row[2] == 'Experiment':
-            all_experiments.append(helper.get_row_with_keys(row))
-    return all_experiments
