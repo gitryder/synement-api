@@ -2,12 +2,9 @@ import datetime
 import pytz
 
 data_keys = [
-    'id', 
-    'subject', 
-    'type', 
-    'title', 
-    'description', 
-    'date_assigned',
+    'id',
+    'subject',
+    'type',
     'date_due'
 ]
 
@@ -32,5 +29,4 @@ def get_date_tomorrow():
 
 
 def get_row_with_keys(row):
-    row[0] = row[0].replace('.', '')
     return dict(zip(data_keys, row))

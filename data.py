@@ -19,8 +19,8 @@ def all_course_work(year):
 
     all_course_work = []
 
-    for row in data[1:]:
-        if not is_before_today(row[6]):
+    for row in data:
+        if not is_before_today(row[3]):
             all_course_work.append(helper.get_row_with_keys(row))
     return all_course_work
 
