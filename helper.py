@@ -9,14 +9,6 @@ data_keys = [
 ]
 
 
-def clean_data(table_data):
-    data = []
-    for row in table_data:
-        row[4] = row[4].replace('Pending', '').replace('Submitted', '')
-        data.append(row[:7])
-    return data
-
-
 def get_date_today():
     return datetime.datetime.now(
         pytz.timezone('Asia/Kolkata')).strftime('%d-%b-%G')
