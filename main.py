@@ -33,13 +33,3 @@ def get_all_due_tomorrow(year):
 @app.get('/{year}/after')
 def get_all_due_after_tomorrow(year):
     return data.all_due_after_tomorrow(year)
-
-
-@app.get('/assignments')
-def get_assignments():
-    return data.all_assignments()
-
-
-@app.get('/experiments')
-def get_experiments():
-    return data.all_experiments()
