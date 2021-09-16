@@ -23,3 +23,5 @@ Apart from the owner, thanks goes to these wonderful people:
 ==========
 
 Copyright (c) 2021 Danyl Fernandes
+
+Creative Commons Legal Code, CC0 1.0 Universal
