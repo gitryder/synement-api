@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import os
+import helper
 import requests
 
 session = requests.Session()
@@ -33,7 +34,7 @@ def get_tables_for(year=""):
     return [asg_table, quiz_table]
 
 
-def get_clean_tables_list(list):
+def get_clean_tables_list(list, asg_ids, quiz_ids):
     asg_table = list[0]
     quiz_table = list[1]
 
@@ -49,13 +50,17 @@ def get_clean_tables_list(list):
         del quiz[:2]
         del quiz[3:]
 
-    table = asg_table + quiz_table
+    for i in range(0, len(asg_table)):
+        asg_id = int(asg_ids[i][0])
+        asg_table[i].insert(0, asg_id)
+        asg_table[i].append(f"{helper.get_work_base_url()}{asg_id}")
 
-    for i in range(0, len(table)):
-        current_index = i + 1
-        table[i].insert(0, current_index)
+    for i in range(0, len(quiz_table)):
+        quiz_id = int(quiz_ids[i][0])
+        quiz_table[i].insert(0, quiz_id)
+        quiz_table[i].append(f"{helper.get_quiz_base_url()}{quiz_id}")
 
-    return table
+    return asg_table + quiz_table
 
 
 def get_all_data_for(year):
@@ -63,6 +68,21 @@ def get_all_data_for(year):
 
     rows = []
     clean_tables = []
+
+    assignment_ids = []
+    for tr in tables[0].find_all('tr'):
+        assignment_ids.append([td['assignment_id']
+                              for td in tr.find_all(attrs={'type': 'button'})])
+
+    quiz_ids = []
+    for tr in tables[1].find_all('tr'):
+        quiz_ids.append([td['quiz_id']
+                        for td in tr.find_all(attrs={'type': 'button'})])
+
+    # Delete the first items because
+    # they're always going to be empty
+    del assignment_ids[0]
+    del quiz_ids[0]
 
     for table in tables:
         trs = table.find_all('tr')
@@ -75,4 +95,4 @@ def get_all_data_for(year):
         clean_tables.append(rows)
         rows = []
 
-    return get_clean_tables_list(clean_tables)
+    return get_clean_tables_list(clean_tables, assignment_ids, quiz_ids)
