@@ -1,11 +1,15 @@
 import datetime
 import pytz
 
+ASG_BASE_URL = "https://xavier.qualcampus.com/Dashboard_Assignment_Student/SubmitAssignment?Assignment_ID="
+QUIZ_BASE_URL = "https://xavier.qualcampus.com/Quiz_Attempt/Index?Quiz_ID="
+
 data_keys = [
     'id',
     'subject',
     'type',
-    'date_due'
+    'date_due',
+    'link'
 ]
 
 
@@ -22,3 +26,11 @@ def get_date_tomorrow():
 
 def get_row_with_keys(row):
     return dict(zip(data_keys, row))
+
+
+def get_work_base_url():
+    return ASG_BASE_URL
+
+
+def get_quiz_base_url():
+    return QUIZ_BASE_URL
