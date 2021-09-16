@@ -17,7 +17,7 @@ app.add_middleware(
 
 @app.get("/")
 def index():
-    return {'info': 'synement v0.31'}
+    return {'info': 'synement v0.36'}
 
 
 @app.get('/{year}/today')
