@@ -1,5 +1,5 @@
 # synement-api
-The core of [Synement](https://github.com/gitryder/synement).
+The core part of [Synement](https://github.com/gitryder/synement).
 
 ![version](https://img.shields.io/badge/version-0.36-blue.svg) 
 ![license](https://img.shields.io/badge/license-GPLv3-red.svg)
