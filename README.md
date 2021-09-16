@@ -2,7 +2,7 @@
 The core part of [Synement](https://github.com/gitryder/synement).
 
 ![version](https://img.shields.io/badge/version-0.36-blue.svg) 
-![license](https://img.shields.io/badge/license-GPLv3-red.svg)
+![license](https://img.shields.io/badge/license-CC0-red.svg)
 ![GitHub issues](https://img.shields.io/github/issues/grewscant/synement) 
 
 
