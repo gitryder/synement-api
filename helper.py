@@ -25,6 +25,8 @@ def get_date_tomorrow():
 
 
 def get_row_with_keys(row):
+    if row[3] == '':
+        row[3] = 'N/A'
     return dict(zip(data_keys, row))
 
 
