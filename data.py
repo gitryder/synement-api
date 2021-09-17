@@ -27,7 +27,7 @@ def all_course_work(year):
 
 def all_due_today(year):
     all_work_due_today = []
-    all_work = all_course_work(year)
+    all_work = helper.get_work_with_valid_dues(all_course_work(year))
     today = helper.get_date_today()
 
     for row in all_work:
@@ -38,7 +38,7 @@ def all_due_today(year):
 
 def all_due_tomorrow(year):
     all_work_due_tomorrow = []
-    all_work = all_course_work(year)
+    all_work = helper.get_work_with_valid_dues(all_course_work(year))
     tomorrow = helper.get_date_tomorrow()
 
     for row in all_work:
@@ -55,6 +55,7 @@ def all_due_after_tomorrow(year):
     tomorrow = helper.get_date_tomorrow()
 
     for row in all_work:
-        if row['date_due'] != today and row['date_due'] != tomorrow:
+        if (row['date_due'] != today and row['date_due'] != tomorrow) \
+            or row['date_due'] == '':
             all_work_due_after_tomorrow.append(row)
     return all_work_due_after_tomorrow
