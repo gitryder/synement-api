@@ -6,7 +6,7 @@ te_data = scraper.get_all_data_for("te")
 
 
 def is_before_today(date_string):
-    if date_string == '':
+    if date_string == '' or date_string == 'N/A':
         return False
     today = time.strptime(helper.get_date_today(), "%d-%b-%Y")
     day = time.strptime(date_string, "%d-%b-%Y")
