@@ -20,19 +20,6 @@ Built with ❤︎ by Danyl Fernandes
 
 Apart from the owner, thanks goes to these wonderful people:
 
-
-
-📑 License
-==========
-
-Copyright (c) 2021 Danyl Fernandes
-
-Creative Commons Legal Code, CC0 1.0 Universal
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -47,4 +34,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+📑 License
+==========
+
+Copyright (c) 2021 Danyl Fernandes
+
+Creative Commons Legal Code, CC0 1.0 Universal
