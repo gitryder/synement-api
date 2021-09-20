@@ -34,8 +34,9 @@ def get_work_with_valid_dues(all_work):
 
 
 def get_row_with_keys(row):
-    if row[3] == '':
-        row[3] = 'N/A'
+    row[4] = row[4].replace('Pending', '').replace('Submitted', '')
+    # if row[3] == '':
+    #    row[3] = 'N/A'
     return dict(zip(data_keys, row))
 
 
