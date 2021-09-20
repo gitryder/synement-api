@@ -8,8 +8,9 @@ data_keys = [
     'id',
     'subject',
     'type',
-    'date_due',
-    'link'
+    'title',
+    'desc',
+    'date_due'
 ]
 
 
@@ -30,7 +31,8 @@ def get_work_with_valid_dues(all_work):
         if work['date_due'] != 'N/A':
             work_with_valid_dues.append(work)
     return work_with_valid_dues
-    
+
+
 def get_row_with_keys(row):
     if row[3] == '':
         row[3] = 'N/A'

@@ -20,7 +20,7 @@ def all_course_work(year):
     all_course_work = []
 
     for row in data:
-        if not is_before_today(row[3]):
+        if not is_before_today(row[5]):
             all_course_work.append(helper.get_row_with_keys(row))
     return all_course_work
 
@@ -56,6 +56,6 @@ def all_due_after_tomorrow(year):
 
     for row in all_work:
         if (row['date_due'] != today and row['date_due'] != tomorrow) \
-            or row['date_due'] == '':
+                or row['date_due'] == '':
             all_work_due_after_tomorrow.append(row)
     return all_work_due_after_tomorrow
