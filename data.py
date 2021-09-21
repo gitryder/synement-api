@@ -2,8 +2,6 @@ import scraper
 import helper
 import time
 
-te_data = scraper.get_all_data_for("te")
-
 
 def is_before_today(date_string):
     if date_string == '' or date_string == 'N/A':
@@ -14,8 +12,7 @@ def is_before_today(date_string):
 
 
 def all_course_work(year):
-    # TODO: Set data according to the year
-    data = te_data
+    data = scraper.get_all_data_for(year)
 
     all_course_work = []
 
