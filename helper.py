@@ -1,4 +1,5 @@
 import datetime
+import pickle
 import pytz
 
 ASG_BASE_URL = "https://xavier.qualcampus.com/Dashboard_Assignment_Student/SubmitAssignment?Assignment_ID="
@@ -46,3 +47,14 @@ def get_work_base_url():
 
 def get_quiz_base_url():
     return QUIZ_BASE_URL
+
+
+def serialize_to_file(filename, data):
+    with open('data/' + filename + '.pkl', 'wb') as handle:
+        pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def deserialize_from_file(filename):
+    with open('data/' + filename + '.pkl', 'rb') as handle:
+        data = pickle.load(handle)
+    return data

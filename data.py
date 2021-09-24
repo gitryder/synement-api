@@ -12,7 +12,13 @@ def is_before_today(date_string):
 
 
 def all_course_work(year):
-    data = scraper.get_all_data_for(year)
+
+    if (year == "se"):
+        data = helper.deserialize_from_file('se_data')
+    elif (year == "be"):
+        data = helper.deserialize_from_file('be_data')
+    else:
+        data = helper.deserialize_from_file('te_data')
 
     all_course_work = []
 
