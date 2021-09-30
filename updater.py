@@ -6,7 +6,7 @@ import helper
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('interval', minutes=120)
+@sched.scheduled_job('interval', minutes=10)
 def fetch_data():
   print("Fetching data")
   se_data = scraper.get_all_data_for('se')
