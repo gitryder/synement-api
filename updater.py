@@ -1,4 +1,5 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
+import os
 import scraper
 import helper
 
@@ -11,6 +12,11 @@ def fetch_data():
   se_data = scraper.get_all_data_for('se')
   te_data = scraper.get_all_data_for('te')
   be_data = scraper.get_all_data_for('be')
+
+  print("Removing old files")
+  os.remove('data/se_data.pkl')
+  os.remove('data/te_data.pkl')
+  os.remove('data/be_data.pkl')
 
   print("Serializing fetched data to files")
   helper.serialize_to_file('se_data', se_data)
