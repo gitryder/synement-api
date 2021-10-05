@@ -58,3 +58,12 @@ def deserialize_from_file(filename):
     with open('data/' + filename + '.pkl', 'rb') as handle:
         data = pickle.load(handle)
     return data
+
+def get_zero_padded_date(date_string):
+    if date_string == '':
+        return date_string
+
+    separator = '-'
+    split_date = date_string.split(separator)
+    split_date[0] = format(int(split_date[0]), '02')
+    return separator.join(split_date)

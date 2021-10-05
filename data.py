@@ -24,6 +24,7 @@ def all_course_work(year):
 
     for row in data:
         if not is_before_today(row[5]):
+            row[5] = helper.get_zero_padded_date(row[5])
             all_course_work.append(helper.get_row_with_keys(row))
     return all_course_work
 
